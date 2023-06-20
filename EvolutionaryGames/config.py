@@ -1,5 +1,4 @@
 CONFIG = {
-
     # DO NOT CHANGE
     'WIDTH': 1280,         # width of the window
     'HEIGHT': 720,         # height of the window

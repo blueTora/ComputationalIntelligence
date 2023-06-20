@@ -1,11 +1,10 @@
 import pygame
 import numpy as np
-
 from nn import NeuralNetwork
 from config import CONFIG
 
 
-class Player():
+class Player:
 
     def __init__(self, mode, control=False):
 
@@ -85,19 +84,10 @@ class Player():
                     self.direction *= -1
 
     def init_network(self, mode):
-
+        # TODO
         # you can change the parameters below
+        return [5, 20, 1]
 
-        layer_sizes = None
-        if mode == 'gravity':
-            layer_sizes = [6, 20, 1]
-        elif mode == 'helicopter':
-            layer_sizes = [6, 20, 1]
-        elif mode == 'thrust':
-            layer_sizes = [6, 20, 1]
-        return layer_sizes
-
-    
     def think(self, mode, box_lists, agent_position, velocity):
 
         # TODO
@@ -105,8 +95,41 @@ class Player():
         # box_lists: an array of `BoxList` objects
         # agent_position example: [600, 250]
         # velocity example: 7
+        input_layer = []
+        agent_box1_distx = 0.5
+        agent_box1_disty = 0.5
+        agent_box2_distx = 0.5
+        agent_box2_disty = 0.5
+        normalized_velocity = velocity / 10
 
-        direction = -1
+        if len(box_lists) == 1:
+            agent_box1_distx = (box_lists[0].x - agent_position[0]) / CONFIG['WIDTH']
+            agent_box1_disty = (box_lists[0].gap_mid - agent_position[1]) / CONFIG['HEIGHT']
+
+        elif len(box_lists) > 1:
+            agent_box1_distx = (box_lists[0].x - agent_position[0]) / CONFIG['WIDTH']
+            agent_box1_disty = (box_lists[0].gap_mid - agent_position[1]) / CONFIG['HEIGHT']
+            agent_box2_distx = (box_lists[1].x - agent_position[0]) / CONFIG['WIDTH']
+            agent_box2_disty = (box_lists[1].gap_mid - agent_position[1]) / CONFIG['HEIGHT']
+
+        input_layer = [agent_box1_distx, agent_box1_disty, agent_box2_distx, agent_box2_disty, normalized_velocity]
+
+        out = self.nn.forward(np.array(input_layer).reshape((-1, 1)))
+
+        if mode == 'helicopter' or mode == 'gravity':
+            if out >= 0.5:
+                direction = 1
+            else:
+                direction = -1
+
+        elif mode == 'thrust':
+            if 0 <= out <= 0.33:
+                direction = -1
+            elif 0.33 < out <= 0.66:
+                direction = 0
+            else:
+                direction = 1
+        
         return direction
 
     def collision_detection(self, mode, box_lists, camera):

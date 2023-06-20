@@ -2,7 +2,6 @@ import pygame
 import time
 import random
 import argparse
-
 from player import Player
 from box_list import BoxList
 from evolution import Evolution
@@ -38,7 +37,7 @@ parser.add_argument(
 args = parser.parse_args()
 
 
-class Game():
+class Game:
 
     def __init__(self):  # class initializer
 
