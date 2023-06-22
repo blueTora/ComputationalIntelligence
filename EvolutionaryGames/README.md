@@ -15,3 +15,5 @@ Helicopter             |  Gravity          |  Thrust
 - Many thanks to [Parnian Rad](https://github.com/Parnian-Rad)
 
 In the project, I trained an ANN by evolutionary algorithm so it can play the game without making any mistake.
+
+My Partner: Maryam Shafiei
