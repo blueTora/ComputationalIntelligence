@@ -24,6 +24,9 @@ Helicopter             |  Gravity          |  Thrust
 3. Thrust
    - `python game.py --mode thrust --play True`
 
+## Acknowledgements
+This course was developed and is being maintained by the Computer Engineering Department of Amirkabir University of Technology. I would like to express my gratitude to the instructor and the teaching assistants for their efforts in creating and delivering this comprehensive course on computational intelligence.
+
 ## Contributors
 - [Hossein Zaredar](https://github.com/HosseinZaredar)
 - [Matin Tavakoli](https://github.com/MatinTavakoli/) <br>
