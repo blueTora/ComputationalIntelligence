@@ -23,7 +23,7 @@ Handwritten digit recognition plays a crucial role in various applications, such
 
 The purpose of this project is to gain a deeper understanding of the inner workings of deep learning algorithms by implementing them without relying on pre-existing frameworks or libraries. By developing the handwritten digit recognition system from scratch, we aim to grasp the fundamental concepts and mechanisms involved in deep learning.
 
-## Algorithms Used
+## Algorithms
 
 The project utilizes the following algorithms:
 
@@ -36,10 +36,7 @@ The project utilizes the following algorithms:
 4. **Activation Functions**: Activation functions are applied to the outputs of neurons within the network. This project employs popular activation functions like sigmoid, ReLU (Rectified Linear Unit), and softmax to introduce non-linearity and allow the model to learn complex representations.
 
 ## Logic of the Project
-
-The project follows the logic of building a deep learning model for handwritten digit recognition from scratch. The steps involved in the logic are as follows:
-
-1. **Data Acquisition**: Obtain a dataset of handwritten digits, such as the MNIST dataset, which consists of thousands of labeled examples.
+**Data Acquisition**: Obtain a dataset of handwritten digits, such as the MNIST dataset, which consists of thousands of labeled examples.
 
 2. **Data Preprocessing**: Preprocess the dataset by normalizing the pixel values to a suitable range, converting labels to one-hot encodings, and splitting the data into training and testing sets.
 
@@ -65,8 +62,8 @@ By implementing the logic outlined above, this project provides a comprehensive 
 
 The project aims to achieve accurate handwritten digit recognition.
 
-<img align="center" alt="Loss Diagram" width="40%" src="https://github.com/negarK2000/ComputationalIntelligence/blob/master/HandwrittenDigitRecognition/loss_diagram.jpg" />
-<img align="center" alt="Accuracy Diagram" width="40%" src="https://github.com/negarK2000/ComputationalIntelligence/blob/master/HandwrittenDigitRecognition/accuracy.jpg" />
+<img align="center" alt="Loss Diagram" width="60%" src="https://github.com/negarK2000/ComputationalIntelligence/blob/master/HandwrittenDigitRecognition/loss_diagram.jpg" />
+<img align="center" alt="Accuracy Diagram" width="60%" src="https://github.com/negarK2000/ComputationalIntelligence/blob/master/HandwrittenDigitRecognition/accuracy.jpg" />
 
 ## Acknowledgments
 
